@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0"
+            prefWidth="360.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.letcs.calculator.CalculatorGUIController">
+    <children>
+        <Pane layoutY="1.0" prefHeight="600.0" prefWidth="360.0" styleClass="background">
+            <children>
+                <Pane prefHeight="73.0" prefWidth="360.0" style="-fx-background-color: black;">
+                    <children>
+                        <Label fx:id="mainDisplay" alignment="CENTER_RIGHT" layoutX="5.0" layoutY="22.0"
+                               prefHeight="30.0" prefWidth="350.0" text="0" textFill="WHITE">
+                            <font>
+                                <Font name="Arial" size="25.0"/>
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
+                <Pane layoutY="73.0" prefHeight="55.0" prefWidth="360.0" style="-fx-background-color: #413F42;">
+                    <children>
+                        <Label fx:id="binaryDisplay" alignment="CENTER" layoutX="5.0" layoutY="13.0" prefHeight="30.0"
+                               prefWidth="350.0" text="Binary Display" textFill="WHITE">
+                            <font>
+                                <Font name="Arial" size="25.0"/>
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
+                <Button fx:id="BTN_A" layoutX="11.0" layoutY="244.0" maxHeight="-Infinity" maxWidth="-Infinity"
+                        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
+                        onMouseClicked="#onClickButton" prefHeight="60.0" prefWidth="60.0"
+                        style="-fx-background-color: D0C9C0;" text="A">
+                    <font>
+                        <Font name="Calibri" size="15.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="BTN_C" layoutX="151.0" layoutY="244.0" maxHeight="-Infinity" maxWidth="-Infinity"
+                        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
+                        onMouseClicked="#onClickButton" prefHeight="60.0" prefWidth="60.0"
+                        style="-fx-background-color: D0C9C0;" text="C">
+                    <font>
+                        <Font name="Calibri" size="15.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="BTN_B" layoutX="80.0" layoutY="244.0" maxHeight="-Infinity" maxWidth="-Infinity"
+                        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
+                        onMouseClicked="#onClickButton" prefHeight="60.0" prefWidth="60.0"
+                        style="-fx-background-color: D0C9C0;" text="B">
+                    <font>
+                        <Font name="Calibri" size="15.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="BTN_7" layoutX="11.0" layoutY="314.0" maxHeight="-Infinity" maxWidth="-Infinity"
+                        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
+                        onMouseClicked="#onClickButton" prefHeight="60.0" prefWidth="60.0"
+                        style="-fx-background-color: D0C9C0;" text="7">
+                    <font>
+                        <Font name="Calibri" size="15.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="BTN_9" layoutX="151.0" layoutY="314.0" maxHeight="-Infinity" maxWidth="-Infinity"
+                        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
+                        onMouseClicked="#onClickButton" prefHeight="60.0" prefWidth="60.0"
+                        style="-fx-background-color: D0C9C0;" text="9">
+                    <font>
+                        <Font name="Calibri" size="15.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="BTN_8" layoutX="80.0" layoutY="314.0" maxHeight="-Infinity" maxWidth="-Infinity"
+                        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
+                        onMouseClicked="#onClickButton" prefHeight="60.0" prefWidth="60.0"
+                        style="-fx-background-color: D0C9C0;" text="8">
+                    <font>
+                        <Font name="Calibri" size="15.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="BTN_4" layoutX="11.0" layoutY="384.0" maxHeight="-Infinity" maxWidth="-Infinity"
+                        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
+                        onMouseClicked="#onClickButton" prefHeight="60.0" prefWidth="60.0"
+                        style="-fx-background-color: D0C9C0;" text="4">
+                    <font>
+                        <Font name="Calibri" size="15.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="BTN_6" layoutX="151.0" layoutY="384.0" maxHeight="-Infinity" maxWidth="-Infinity"
+                        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
+                        onMouseClicked="#onClickButton" prefHeight="60.0" prefWidth="60.0"
+                        style="-fx-background-color: D0C9C0;" text="6">
+                    <font>
+                        <Font name="Calibri" size="15.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="BTN_5" layoutX="81.0" layoutY="384.0" maxHeight="-Infinity" maxWidth="-Infinity"
+                        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
+                        onMouseClicked="#onClickButton" prefHeight="60.0" prefWidth="60.0"
+                        style="-fx-background-color: D0C9C0;" text="5">
+                    <font>
+                        <Font name="Calibri" size="15.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="BTN_1" layoutX="11.0" layoutY="454.0" maxHeight="-Infinity" maxWidth="-Infinity"
+                        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
+                        onMouseClicked="#onClickButton" prefHeight="60.0" prefWidth="60.0"
+                        style="-fx-background-color: D0C9C0;" text="1">
+                    <font>
+                        <Font name="Calibri" size="15.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="BTN_3" layoutX="151.0" layoutY="454.0" maxHeight="-Infinity" maxWidth="-Infinity"
+                        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
+                        onMouseClicked="#onClickButton" prefHeight="60.0" prefWidth="60.0"
+                        style="-fx-background-color: D0C9C0;" text="3">
+                    <font>
+                        <Font name="Calibri" size="15.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="BTN_2" layoutX="81.0" layoutY="454.0" maxHeight="-Infinity" maxWidth="-Infinity"
+                        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
+                        onMouseClicked="#onClickButton" prefHeight="60.0" prefWidth="60.0"
+                        style="-fx-background-color: D0C9C0;" text="2">
+                    <font>
+                        <Font name="Calibri" size="15.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="BTN_FF" layoutX="11.0" layoutY="526.0" maxHeight="-Infinity" maxWidth="-Infinity"
+                        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
+                        onMouseClicked="#onClickButton" prefHeight="60.0" prefWidth="60.0"
+                        style="-fx-background-color: D0C9C0;" text="FF">
+                    <font>
+                        <Font name="Calibri" size="15.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="BTN_00" layoutX="151.0" layoutY="526.0" maxHeight="-Infinity" maxWidth="-Infinity"
+                        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
+                        onMouseClicked="#onClickButton" prefHeight="60.0" prefWidth="60.0"
+                        style="-fx-background-color: D0C9C0;" text="00">
+                    <font>
+                        <Font name="Calibri" size="15.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="BTN_0" layoutX="81.0" layoutY="526.0" maxHeight="-Infinity" maxWidth="-Infinity"
+                        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
+                        onMouseClicked="#onClickButton" prefHeight="60.0" prefWidth="60.0"
+                        style="-fx-background-color: D0C9C0;" text="0">
+                    <font>
+                        <Font name="Calibri" size="15.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="BTN_D" layoutX="11.0" layoutY="174.0" maxHeight="-Infinity" maxWidth="-Infinity"
+                        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
+                        onMouseClicked="#onClickButton" prefHeight="60.0" prefWidth="60.0"
+                        style="-fx-background-color: D0C9C0;" text="D">
+                    <font>
+                        <Font name="Calibri" size="15.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="BTN_F" layoutX="151.0" layoutY="174.0" maxHeight="-Infinity" maxWidth="-Infinity"
+                        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
+                        onMouseClicked="#onClickButton" prefHeight="60.0" prefWidth="60.0"
+                        style="-fx-background-color: D0C9C0;" text="F">
+                    <font>
+                        <Font name="Calibri" size="15.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="BTN_E" layoutX="81.0" layoutY="174.0" maxHeight="-Infinity" maxWidth="-Infinity"
+                        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
+                        onMouseClicked="#onClickButton" prefHeight="60.0" prefWidth="60.0"
+                        style="-fx-background-color: D0C9C0;" text="E">
+                    <font>
+                        <Font name="Calibri" size="15.0"/>
+                    </font>
+                </Button>
+                <RadioButton fx:id="BTN_OCTAL" layoutX="56.0" layoutY="142.0" mnemonicParsing="false"
+                             onMouseClicked="#onClickButton" text="Octal">
+                    <font>
+                        <Font name="Calibri" size="12.0"/>
+                    </font>
+                    <toggleGroup>
+                        <ToggleGroup fx:id="CalculatorMode"/>
+                    </toggleGroup>
+                </RadioButton>
+                <RadioButton fx:id="BTN_DECIMAL" layoutX="150.0" layoutY="142.0" mnemonicParsing="false"
+                             onMouseClicked="#onClickButton" selected="true" text="Decimal"
+                             toggleGroup="$CalculatorMode">
+                    <font>
+                        <Font name="Calibri" size="12.0"/>
+                    </font>
+                </RadioButton>
+                <RadioButton fx:id="BTN_HEXADECIMAL" layoutX="249.0" layoutY="142.0" mnemonicParsing="false"
+                             onMouseClicked="#onClickButton" text="Hexadecimal" toggleGroup="$CalculatorMode">
+                    <font>
+                        <Font name="Calibri" size="12.0"/>
+                    </font>
+                </RadioButton>
+                <Button fx:id="BTN_BACK" layoutX="222.0" layoutY="174.0" maxHeight="-Infinity" maxWidth="-Infinity"
+                        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
+                        onMouseClicked="#onClickButton" prefHeight="60.0" prefWidth="128.0"
+                        style="-fx-background-color: D0C9C0;" text="←">
+                    <font>
+                        <Font name="Calibri" size="15.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="BTN_AC" layoutX="222.0" layoutY="244.0" maxHeight="-Infinity" maxWidth="-Infinity"
+                        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
+                        onMouseClicked="#onClickButton" prefHeight="60.0" prefWidth="128.0"
+                        style="-fx-background-color: D0C9C0;" text="AC">
+                    <font>
+                        <Font name="Calibri" size="15.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="BTN_EQ" layoutX="222.0" layoutY="526.0" maxHeight="-Infinity" maxWidth="-Infinity"
+                        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
+                        onMouseClicked="#onClickButton" prefHeight="60.0" prefWidth="128.0"
+                        style="-fx-background-color: D0C9C0;" text="=">
+                    <font>
+                        <Font name="Calibri" size="15.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="BTN_1SCOMP" layoutX="222.0" layoutY="314.0" maxHeight="-Infinity" maxWidth="-Infinity"
+                        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
+                        onMouseClicked="#onClickButton" prefHeight="60.0" prefWidth="60.0"
+                        style="-fx-background-color: D0C9C0;" text="1‘s">
+                    <font>
+                        <Font name="Calibri" size="15.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="BTN_2SCOMP" layoutX="292.0" layoutY="314.0" maxHeight="-Infinity" maxWidth="-Infinity"
+                        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
+                        onMouseClicked="#onClickButton" prefHeight="60.0" prefWidth="60.0"
+                        style="-fx-background-color: D0C9C0;" text="2's">
+                    <font>
+                        <Font name="Calibri" size="15.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="BTN_DIV" layoutX="221.0" layoutY="384.0" maxHeight="-Infinity" maxWidth="-Infinity"
+                        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
+                        onMouseClicked="#onClickButton" prefHeight="60.0" prefWidth="60.0"
+                        style="-fx-background-color: D0C9C0;" text="/">
+                    <font>
+                        <Font name="Calibri" size="15.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="BTN_MINUS" layoutX="291.0" layoutY="384.0" maxHeight="-Infinity" maxWidth="-Infinity"
+                        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
+                        onMouseClicked="#onClickButton" prefHeight="60.0" prefWidth="60.0"
+                        style="-fx-background-color: D0C9C0;" text="-">
+                    <font>
+                        <Font name="Calibri" size="15.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="BTN_MULTI" layoutX="221.0" layoutY="454.0" maxHeight="-Infinity" maxWidth="-Infinity"
+                        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
+                        onMouseClicked="#onClickButton" prefHeight="60.0" prefWidth="60.0"
+                        style="-fx-background-color: D0C9C0;" text="x">
+                    <font>
+                        <Font name="Calibri" size="15.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="BTN_PLUS" layoutX="291.0" layoutY="454.0" maxHeight="-Infinity" maxWidth="-Infinity"
+                        minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
+                        onMouseClicked="#onClickButton" prefHeight="60.0" prefWidth="60.0"
+                        style="-fx-background-color: D0C9C0;" text="+">
+                    <font>
+                        <Font name="Calibri" size="15.0"/>
+                    </font>
+                </Button>
+            </children>
+        </Pane>
+    </children>
+</AnchorPane>
