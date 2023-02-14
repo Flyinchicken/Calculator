@@ -25,20 +25,21 @@ public enum CalculatorButton {
 
     BTN_AC("AC", BtnType.functional),
     BTN_BACK("BACK", BtnType.functional),
+    BTN_1SCOMP("1's", BtnType.functional),
+    BTN_2SCOMP("2's", BtnType.functional),
 
-    BTN_1SCOMP("1's", BtnType.operator),
-    BTN_2SCOMP("2's", BtnType.operator),
     BTN_PLUS("+", BtnType.operator),
     BTN_MINUS("-", BtnType.operator),
     BTN_MULTI("*", BtnType.operator),
     BTN_DIV("/", BtnType.operator),
-    BTN_EQ("=", BtnType.operator),
+
+    BTN_EQ("=", BtnType.equal),
 
     BTN_OCTAL("octal", BtnType.mode),
     BTN_DECIMAL("decimal", BtnType.mode),
     BTN_HEXADECIMAL("hexadecimal", BtnType.mode);
 
-    enum BtnType {digit, mode, operator, functional}
+    enum BtnType {digit, mode, operator, functional, equal}
 
     private String literal;
     private BtnType type;

@@ -1,5 +1,6 @@
 package com.letcs.calculator.operation;
 
+import com.letcs.calculator.CalculatorMode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -23,8 +24,22 @@ public class IntOperand implements Operand {
     }
 
     @Override
-    public boolean tryToAppend(String input) {
-        int i = Integer.parseInt(input);
+    public boolean tryToAppend(String input, CalculatorMode mode) {
+        int i;
+        switch(mode){
+            case decimal:
+                i = Integer.parseInt(input);
+                break;
+            case octal:
+                i = Integer.parseInt(input,8);
+                break;
+            case hexadecimal:
+                i = Integer.parseInt(input,16);
+                break;
+            default:
+                throw new RuntimeException("Not supported calculator mode!");
+        }
+
         if (willMulOverflow(10, value)) {
             logger.warn(String.format("Operand overflow, current: %d, try to append: %s", value, input));
             return false;
@@ -50,6 +65,14 @@ public class IntOperand implements Operand {
     }
 
     @Override
+    public void onesComp() {this.value = Integer.MAX_VALUE - this.value;}
+
+    @Override
+    public void twosComp() {
+        this.value = Integer.MAX_VALUE - this.value + 1;
+    }
+
+    @Override
     public Object getValue() {
         return value;
     }
@@ -57,6 +80,21 @@ public class IntOperand implements Operand {
     @Override
     public String toDisplay() {
         return String.valueOf(value);
+    }
+
+    @Override
+    public String toUpperBinaryDisplay() {
+        return " ";
+    }
+
+    @Override
+    public String toLowerBinaryDisplay() {
+        StringBuilder temp = new StringBuilder();
+        for (int i = 31; i >= 0; i--) {
+            temp.append(((value & (1 << i)) == 0)?"0":"1");
+            if(i == 16) temp.append(" ");
+        }
+        return temp.toString();
     }
 
     @Override

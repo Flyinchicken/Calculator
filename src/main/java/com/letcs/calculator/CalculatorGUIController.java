@@ -11,9 +11,12 @@ public class CalculatorGUIController {
     final static Logger logger = LoggerFactory.getLogger(CalculatorGUIController.class);
 
     @FXML
-    private Label mainDisplay;
+    private Label mainLabel;
     @FXML
-    private Label binaryDisplay;
+
+    private Label upperBinaryLabel;
+    @FXML
+    private Label lowerBinaryLabel;
 
     private ButtonClickedListener listener;
 
@@ -36,16 +39,9 @@ public class CalculatorGUIController {
         }
     }
 
-    public void changeDisplay(CalculatorContext.DisplayType whichDisplay, String newContent) {
-        switch (whichDisplay) {
-            case MAIN:
-                mainDisplay.setText(newContent);
-                break;
-            case BINARY:
-                binaryDisplay.setText(newContent);
-                break;
-            default:
-                throw new RuntimeException("Not supported display type");
-        }
+    public void changeDisplay(String mainDisplay, String upperBinaryDisplay, String lowerBinaryDisplay) {
+        mainLabel.setText(mainDisplay);
+        upperBinaryLabel.setText(upperBinaryDisplay);
+        lowerBinaryLabel.setText(lowerBinaryDisplay);
     }
 }

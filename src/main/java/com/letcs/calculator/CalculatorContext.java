@@ -58,8 +58,6 @@ public class CalculatorContext {
     /*
      * GUI Control
      */
-    public enum DisplayType {MAIN, BINARY,}
-
     private CalculatorGUIController controller;
     private Scene scene;
     private boolean isDisplayOff = false;
@@ -67,13 +65,15 @@ public class CalculatorContext {
     /**
      * Change the display content in the GUI interface
      *
-     * @param whichDisplay specify which display area need to change
-     * @param newContent   the new content need to be displayed in string format
+     * @param currentOperand  the operand being handled currently whose value needs to be updated in both decimal(main)
+     *                        and binary displays
      */
-    public void submitDisplayChange(DisplayType whichDisplay, String newContent) {
+    public void submitDisplayChange(Operand currentOperand) {
         if (isDisplayOff) return;
-        controller.changeDisplay(whichDisplay, newContent);
+        controller.changeDisplay(currentOperand.toDisplay(), currentOperand.toUpperBinaryDisplay(), currentOperand.toLowerBinaryDisplay());
     }
+
+
 
     /**
      * Disable a digit button, other types of button should not be disabled at any time

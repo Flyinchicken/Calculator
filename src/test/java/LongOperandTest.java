@@ -153,7 +153,7 @@ public class LongOperandTest {
 
     @Test
     public void twoCompletedAddition() {
-        String btnSeq = "1 + 3 = 1 + 3";
+        String btnSeq = "1 + 3 = 1 + 3 =";
         long expected = 4;
         List<CalculatorButton> btns = btnFromString(btnSeq);
         btns.forEach(btn -> core.onButtonClicked(btn));
@@ -165,6 +165,36 @@ public class LongOperandTest {
     public void additionAndMultiplication() {
         String btnSeq = "1 + 3 = * =";
         long expected = 16;
+        List<CalculatorButton> btns = btnFromString(btnSeq);
+        btns.forEach(btn -> core.onButtonClicked(btn));
+        Operand actual = core.getCurrentResult();
+        assertEquals(expected, (long) actual.getValue());
+    }
+
+    @Test
+    public void changeOperator() {
+        String btnSeq = "1 + * + * 3 =";
+        long expected = 3;
+        List<CalculatorButton> btns = btnFromString(btnSeq);
+        btns.forEach(btn -> core.onButtonClicked(btn));
+        Operand actual = core.getCurrentResult();
+        assertEquals(expected, (long) actual.getValue());
+    }
+
+    @Test
+    public void sequenceOfDiffOperations() {
+        String btnSeq = "1 + 3 * 2 - 5 +";
+        long expected = 3;
+        List<CalculatorButton> btns = btnFromString(btnSeq);
+        btns.forEach(btn -> core.onButtonClicked(btn));
+        Operand actual = core.getCurrentResult();
+        assertEquals(expected, (long) actual.getValue());
+    }
+
+    @Test
+    public void sequenceOfSameOperators() {
+        String btnSeq = "1 + + + + +";
+        long expected = 5;
         List<CalculatorButton> btns = btnFromString(btnSeq);
         btns.forEach(btn -> core.onButtonClicked(btn));
         Operand actual = core.getCurrentResult();
